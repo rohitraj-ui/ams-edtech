@@ -42,9 +42,9 @@ export default function BuyNow() {
   // Handle form input changes with validation
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
-    
+
     let processedValue = value;
-    
+
     // Apply validation based on field type
     if (name === "name" || name === "company_name") {
       // Remove numbers and special characters from name fields
@@ -53,7 +53,7 @@ export default function BuyNow() {
       // Remove non-numeric characters and limit to 10 digits
       processedValue = value.replace(/\D/g, "").slice(0, 10);
     }
-    
+
     setFormData((prev) => ({
       ...prev,
       [name]: type === "checkbox" ? checked : processedValue,
@@ -144,95 +144,96 @@ export default function BuyNow() {
   };
 
   // Confirm inside modal → Call API for payment
-//   const handleConfirmPayment = async () => {
-//     if (!validateForm()) {
-//       return;
-//     }
+  //   const handleConfirmPayment = async () => {
+  //     if (!validateForm()) {
+  //       return;
+  //     }
 
-//     setLoading(true);
-//     setResponseMsg("");
-// const price = Number(selectedPlan.discout_price.replace(/,/g, ""));
-//     const dataToSend = {
-//       plan_id: planId,
-//       plan_name: selectedPlan.category_name,
-//       plan_price: price,
-//       ...formData,
-//     };
+  //     setLoading(true);
+  //     setResponseMsg("");
+  // const price = Number(selectedPlan.discout_price.replace(/,/g, ""));
+  //     const dataToSend = {
+  //       plan_id: planId,
+  //       plan_name: selectedPlan.category_name,
+  //       plan_price: price,
+  //       ...formData,
+  //     };
 
-//     try {
-//       const res = await axios.post(
-//         "http://edtech-web.local/admin/app/service/payments/store",
-//         dataToSend
-//       );
+  //     try {
+  //       const res = await axios.post(
+  //         "http://edtech-web.local/admin/app/service/payments/store",
+  //         dataToSend
+  //       );
 
-//       if (res.data.status) {
-//         setResponseMsg("Redirecting to payment...");
+  //       if (res.data.status) {
+  //         setResponseMsg("Redirecting to payment...");
 
-//         const token = res.data.token;
-//         if (token) {
-//           const paymentUrl = `https://pay.easebuzz.in/pay/${token}`;
-//           window.open(paymentUrl, "_blank", "noopener,noreferrer");
-//         } else {
-//           setResponseMsg("Payment token not generated.");
-//         }
-//       } else {
-//         setResponseMsg(res.data.message || "Something went wrong");
-//       }
-//     } catch (err) {
-//       console.error("Easebuzz error:", err);
-//       setResponseMsg("Something went wrong. Please try again.");
-//     } finally {
-//       setLoading(false);
-//       setShowModal(false);
-//     }
-//   };
-const handleConfirmPayment = async () => {
-  if (!validateForm()) return;
+  //         const token = res.data.token;
+  //         if (token) {
+  //           const paymentUrl = `https://pay.easebuzz.in/pay/${token}`;
+  //           window.open(paymentUrl, "_blank", "noopener,noreferrer");
+  //         } else {
+  //           setResponseMsg("Payment token not generated.");
+  //         }
+  //       } else {
+  //         setResponseMsg(res.data.message || "Something went wrong");
+  //       }
+  //     } catch (err) {
+  //       console.error("Easebuzz error:", err);
+  //       setResponseMsg("Something went wrong. Please try again.");
+  //     } finally {
+  //       setLoading(false);
+  //       setShowModal(false);
+  //     }
+  //   };
+  const handleConfirmPayment = async () => {
+    if (!validateForm()) return;
 
-  setLoading(true);
-  setResponseMsg("");
+    setLoading(true);
+    setResponseMsg("");
 
-  // Remove commas and convert to number
-  const price = selectedPlan.discout_price.replace(/,/g, "");
+    // Remove commas and convert to number
+    const price = selectedPlan.discout_price.replace(/,/g, "");
 
-  const dataToSend = {
-    plan_id: planId,
-    plan_name: selectedPlan.category_name,
-    plan_price: price,
-    ...formData,
-  };
-// console.log(dataToSend);return false;
-  try {
-    const res = await axios.post(
-      "https://www.edtechinnovate.com/admin/app/service/payments/store.php",
-      dataToSend,
-      {
-        headers: { "Content-Type": "application/json" },
-      }
-    );
+    const dataToSend = {
+      plan_id: planId,
+      plan_name: selectedPlan.category_name,
+      plan_price: price,
+      ...formData,
+    };
+    // console.log(dataToSend);return false;
+    try {
+      const res = await axios.post(
+        "https://www.edtechinnovate.com/admin/app/service/payments/store",
+        dataToSend,
+        {
+          headers: { "Content-Type": "application/json" },
+        }
+      );
 
-    if (res.data.status) {
-      setResponseMsg("Redirecting to payment...");
+      if (res.data.status) {
+        setResponseMsg("Redirecting to payment...");
 
-      const token = res.data.token;
-      if (token) {
-        const paymentUrl = `https://pay.easebuzz.in/pay/${token}`;
-        window.open(paymentUrl, "_blank", "noopener,noreferrer");
+        const token = res.data.token;
+        if (token) {
+          const paymentUrl = `https://pay.easebuzz.in/pay/${token}`;
+          window.open(paymentUrl, "_blank", "noopener,noreferrer");
+        } else {
+          setResponseMsg("Payment token not generated.");
+        }
       } else {
-        setResponseMsg("Payment token not generated.");
+        setResponseMsg(res.data.message || "Something went wrong");
       }
-    } else {
-      setResponseMsg(res.data.message || "Something went wrong");
+    } catch (err) {
+      console.error("Easebuzz error:", err.response?.data || err.message);
+      setResponseMsg(
+        err.response?.data?.message || "Something went wrong. Please try again."
+      );
+    } finally {
+      setLoading(false);
+      setShowModal(false);
     }
-  } catch (err) {
-    console.error("Easebuzz error:", err.response?.data || err.message);
-    setResponseMsg(err.response?.data?.message || "Something went wrong. Please try again.");
-  } finally {
-    setLoading(false);
-    setShowModal(false);
-  }
-};
-
+  };
 
   const handleFreeTrial = async (e) => {
     e.preventDefault();
@@ -253,7 +254,14 @@ const handleConfirmPayment = async () => {
     try {
       const res = await axios.post(
         "https://www.edtechinnovate.com/admin/app/service/payments/store",
-        dataToSend
+        dataToSend, // the actual data
+        {
+          headers: {
+            // ✅ must be inside 'headers'
+            "Content-Type": "application/json",
+            "X-Pid": "7",
+          },
+        }
       );
 
       if (res.data.status) {

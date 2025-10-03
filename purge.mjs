@@ -9,7 +9,7 @@ async function runPurge() {
       "./src/pages/**/*.jsx", 
       "./src/components/**/*.jsx"
     ],
-    css: ["./public/assets/css/main.css"], // <-- fixed path
+    css: ["./public/assets/css/web-main.css"], // <-- fixed path
     safelist: [
       /^fa-/,
       /^btn/,
