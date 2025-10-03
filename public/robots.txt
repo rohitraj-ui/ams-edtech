@@ -1,0 +1,6 @@
+# Allow all bots
+User-agent: *
+Disallow:
+
+# Sitemap link (optional but recommended)
+# Sitemap: https://www.yoursite.com/sitemap.xml

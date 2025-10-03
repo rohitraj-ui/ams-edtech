@@ -1,0 +1,38 @@
+// purge.mjs
+import { PurgeCSS } from "purgecss";
+import fs from "fs";
+
+async function runPurge() {
+  const result = await new PurgeCSS().purge({
+    content: [
+      "./index.html", 
+      "./src/pages/**/*.jsx", 
+      "./src/components/**/*.jsx"
+    ],
+    css: ["./public/assets/css/main.css"], // <-- fixed path
+    safelist: [
+      /^fa-/,
+      /^btn/,
+      /^col-/,
+      /^row/,
+      /^container/,
+      /^d-/,
+      /^text-/,
+      /^bg-/
+    ],
+  });
+
+  if (!result[0]) {
+    console.error("❌ No CSS returned! Check your paths.");
+    return;
+  }
+
+  // Ensure output folder exists
+  fs.mkdirSync("./minify-css", { recursive: true });
+
+  // Write output
+  fs.writeFileSync("./minify-css/main.css", result[0].css);
+  console.log("✅ CSS purged and saved to minify-css/main.css");
+}
+
+runPurge();
