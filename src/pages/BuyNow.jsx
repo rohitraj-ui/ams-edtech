@@ -308,7 +308,7 @@ export default function BuyNow() {
                   <Link to="/">Home</Link>
                 </li>
                 <li>
-                  <i className="fa-regular fa-arrow-right-long"></i>
+                  <i className="fa-solid fa-arrow-right"></i>
                 </li>
                 <li>{isFreeTrial ? "Free Trial" : "Buy Now"}</li>
               </ul>
@@ -340,11 +340,11 @@ export default function BuyNow() {
                     </div>
                     <div className="pricing-list">
                       <h4>Key features:</h4>
-                      <ul>
+                      <ul className="ps-0">
                         {features.map((f, i) => (
                           <li key={i}>
-                            {f.status === 1 ? (
-                              <i className="fa-solid fa-check"></i>
+                            {f.status == 1 ? (
+                              <i className="fa-solid fa-check text-success"></i>
                             ) : (
                               <i className="fa-solid fa-xmark color-1"></i>
                             )}
