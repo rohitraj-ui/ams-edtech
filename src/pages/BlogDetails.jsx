@@ -1,5 +1,8 @@
 import { Link, useParams } from "react-router-dom";
 import { useData } from "../context/DataContext";
+import { FaArrowRightLong } from "react-icons/fa6";
+import { SlCalender } from "react-icons/sl";
+import { GoArrowUpRight } from "react-icons/go";
 
 export default function BlogDetails() {
   const { slug } = useParams(); // slug from URL
@@ -36,7 +39,7 @@ export default function BlogDetails() {
                   <Link to="/"> Home </Link>
                 </li>
                 <li>
-                  <i className="fa-solid fa-arrow-right"></i>
+                  <FaArrowRightLong/>
                 </li>
                 <li>{blog.Name}</li>
               </ul>
@@ -67,7 +70,7 @@ export default function BlogDetails() {
                 <div className="list-items">
                   <ul className="style-2">
                     <li>
-                      <i className="fa-solid fa-calendar-days"></i>
+                      <SlCalender className="me-2"/>
                       {new Date(blog.Created_At).toLocaleDateString()}
                     </li>
                   </ul>
@@ -110,7 +113,7 @@ export default function BlogDetails() {
                             <div className="news-content">
                               <ul className="post-date">
                                 <li>
-                                  <i className="fa-solid fa-calendar-days"></i>
+                                 <SlCalender className="me-2"/>
                                   {new Date(b.Created_At).toLocaleDateString()}
                                 </li>
                               </ul>
@@ -119,7 +122,7 @@ export default function BlogDetails() {
                               </h3>
                               <Link to={`/blog/${b.Slug}`} className="link-btn">
                                 Continue Reading{" "}
-                                 <i className="fa-solid fa-arrow-right"></i>
+                                 <GoArrowUpRight className="fw-bold" />
                               </Link>
                             </div>
                           </div>

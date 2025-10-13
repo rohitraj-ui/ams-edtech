@@ -1,3 +1,4 @@
+import { FaArrowRightLong } from "react-icons/fa6";
 import { Link } from "react-router-dom";
 
 export default function TermsConditions() {
@@ -19,7 +20,7 @@ export default function TermsConditions() {
                                     </Link>
                                 </li>
                                 <li>
-                                    <i className="fa-solid fa-arrow-right"></i>
+                                   <FaArrowRightLong/>
                                 </li>
                                 <li>
                                     Terms & Condition

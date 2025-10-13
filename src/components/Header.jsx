@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 export default function Header() {
   return (
-    <>     
+    <>
       <header className="header sticky-top">
         <nav className="navbar navbar-expand-lg bg-white py-3 shadow-sm">
           <div className="container">
@@ -13,10 +13,11 @@ export default function Header() {
                 width="150"
                 height="150"
                 alt="edtech logo"
-                class="img-fluid rounded-3"
+                className="img-fluid rounded-3"
                 loading="eager"
-                fetchpriority="high"
+                fetchPriority="high"
               />
+
               {/* <picture>
                 <source
                   srcSet="/assets/img/logo/logo.webp 480w, /assets/img/logo/logo.webp 768w, /assets/img/logo/logo.webp 1270w"

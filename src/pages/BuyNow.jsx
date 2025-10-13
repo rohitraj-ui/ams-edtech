@@ -4,6 +4,8 @@ import { useData } from "../context/DataContext";
 import axios from "axios";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { FaArrowRightLong } from "react-icons/fa6";
+import { FaCheckCircle } from "react-icons/fa";
 
 export default function BuyNow() {
   const { planId } = useParams();
@@ -308,7 +310,7 @@ export default function BuyNow() {
                   <Link to="/">Home</Link>
                 </li>
                 <li>
-                  <i className="fa-solid fa-arrow-right"></i>
+                 <FaArrowRightLong/>
                 </li>
                 <li>{isFreeTrial ? "Free Trial" : "Buy Now"}</li>
               </ul>
@@ -344,7 +346,7 @@ export default function BuyNow() {
                         {features.map((f, i) => (
                           <li key={i}>
                             {f.status == 1 ? (
-                              <i className="fa-solid fa-check text-success"></i>
+                               <FaCheckCircle className="text-success me-2" />
                             ) : (
                               <i className="fa-solid fa-xmark color-1"></i>
                             )}

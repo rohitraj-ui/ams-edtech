@@ -1,5 +1,7 @@
 import axios from "axios";
 import { Link } from "react-router-dom";
+import { FaArrowRight } from "react-icons/fa6";
+import { FaCheckCircle } from "react-icons/fa";
 export default function Pricing({ pricing = [] }) {
   const styles = ["", "style-2", "style-3"];
   return (
@@ -118,7 +120,7 @@ export default function Pricing({ pricing = [] }) {
         </div> */}
 
         {/* lms price code here */}
-        <div class="row">
+        <div className="row">
           {pricing.length > 0 ? (
             pricing.map((plan, index) => {
               let features = [];
@@ -129,9 +131,9 @@ export default function Pricing({ pricing = [] }) {
               }
 
               return (
-                <div class="col-md-6" key={plan.plain_id}>
-                  <div class="pricing-table purple border border-1 rounded-5 mb-3">
-                    <div class="pricing-label"> Buy Now </div>
+                <div className="col-md-6" key={plan.plain_id}>
+                  <div className="pricing-table purple border border-1 rounded-5 mb-3">
+                    <div className="pricing-label"> Buy Now </div>
                     <h2 className="fs-2 mb-4 fw-semibold">
                       {plan.category_name}
                     </h2>
@@ -149,7 +151,7 @@ export default function Pricing({ pricing = [] }) {
                                 {firstHalf.map((f, i) => (
                                   <li key={i} className="mb-1 fs-6">
                                     {f.status == 1 ? (
-                                      <i className="fa-solid fa-circle-check text-success me-2"></i>
+                                      <FaCheckCircle className="text-success me-2" />
                                     ) : (
                                       <i className="fa-sharp fa-regular fa-xmark text-danger me-2"></i>
                                     )}
@@ -163,7 +165,7 @@ export default function Pricing({ pricing = [] }) {
                                 {secondHalf.map((f, i) => (
                                   <li key={i} className="mb-1 fs-6">
                                     {f.status == 1 ? (
-                                      <i className="fa-solid fa-circle-check text-success me-2"></i>
+                                      <FaCheckCircle className="text-success me-2" />
                                     ) : (
                                       <i className="fa-sharp fa-regular fa-xmark text-danger me-2"></i>
                                     )}
@@ -189,23 +191,24 @@ export default function Pricing({ pricing = [] }) {
                         </li>
                       ))}
                     </ul> */}
-                    <div class="price-tag d-lg-flex align-items-center justify-content-center">
+                    <div className="price-tag d-lg-flex align-items-center justify-content-center">
                       <div>
-                        <span class="symbol">₹</span>
-                        <span class="amount">{plan.discout_price}</span>
+                        <span className="symbol">₹</span>
+                        <span className="amount">{plan.discout_price}</span>
                       </div>
                       <div className="ms-2">
                         <p className="mb-0">
                           <del>₹{plan.actual_price}</del> Off
                         </p>
-                        <span class="after">/Billed Yearly</span>
+                        <span className="after">/Billed Yearly</span>
                       </div>
                     </div>
                     <Link
                       to={`/pay/${plan.plain_id}`}
-                      class="price-button rounded-5"
+                      className="price-button rounded-5"
                     >
-                      Pick your plan <i className="fa-solid fa-arrow-right"></i>
+                      Pick your plan
+                      <FaArrowRight className="ms-2" />
                     </Link>
                   </div>
                 </div>

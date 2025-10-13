@@ -1,4 +1,6 @@
 import { Link } from "react-router-dom";
+import { GoArrowUpRight } from "react-icons/go";
+import { SlCalender } from "react-icons/sl";
 
 export default function BlogSection({ blogData }) {
   // JSON Data for Blogs
@@ -76,7 +78,7 @@ export default function BlogSection({ blogData }) {
                   <ul className="post-date ps-0">
                     <li>
                       <Link to={`/blog/${blog.Slug}`} className="text-black">
-                        <i className="fa-solid fa-calendar-days"></i>
+                         <SlCalender className="me-2"/>
                         {blog.Created_At}
                       </Link>
                     </li>
@@ -90,7 +92,7 @@ export default function BlogSection({ blogData }) {
                   </h3>
                   <Link to={`/blog/${blog.Slug}`} className="link-btn secondary-color">
                     Continue Reading
-                    <i className="fa-solid fa-arrow-right"></i>
+                   <GoArrowUpRight className="fw-bold text-black" />
                   </Link>
                 </div>
               </div>
@@ -103,7 +105,7 @@ export default function BlogSection({ blogData }) {
           data-wow-delay=".3s"
         >
           <Link to="/blogs" className="theme-btn">
-            See All Blogs <i className="fa-solid fa-arrow-right"></i>
+            See All Blogs <GoArrowUpRight className="fw-bold" />
           </Link>
         </div>
       </div>

@@ -109,12 +109,12 @@ export default function Features({ keyFeatures }) {
       </section> */}
 
 
-      <section class="how-we-do-section fix section-padding section-bg-2 pt-5 mt-5">
-        <div class="container">
+      <section className="how-we-do-section fix section-padding section-bg-2 pt-5 mt-5">
+        <div className="container">
 
-          <div class="how-do-wrapper">
-            <div class="row align-items-center">
-              <div class="col-lg-6">
+          <div className="how-do-wrapper">
+            <div className="row align-items-center">
+              <div className="col-lg-6">
                 <div className="section-title mb-40">
                   <div className="sub-text mb-4">
                     <img
@@ -135,18 +135,16 @@ export default function Features({ keyFeatures }) {
                     Edtech AMS A unique way business
                   </h2>
                   <p>
-                    CRM management is comprehensive contact management, allowing
-                    businesses to centralize and organize customer information
-                    for easy access.
+                    AMS provides comprehensive admission management, enabling institutions to centralize and organize student and applicant information for easy access.
                   </p>
                 </div>
               </div>
 
-              <div class="col-lg-6 wow fadeInUp" data-wow-delay=".3s">
-                <div class="how-do-box-wrap pe-3">
+              <div className="col-lg-6 wow fadeInUp" data-wow-delay=".3s">
+                <div className="how-do-box-wrap pe-3">
                   {keyFeatures.map((t) => (
-                    <div key={t.id} class="how-do-box-items">
-                      <div class="thumb">
+                    <div key={t.id} className="how-do-box-items">
+                      <div className="thumb">
                         <img
                           src={t.image}
                           className="img-fluid w-100 rounded-3"
@@ -157,7 +155,7 @@ export default function Features({ keyFeatures }) {
                           height="100"
                         />
                       </div>
-                      <div class="content">
+                      <div className="content">
                         <h3 className="fw-bold"> {t.title} </h3>
                         <p
                           className="wow fadeInUp font-16"

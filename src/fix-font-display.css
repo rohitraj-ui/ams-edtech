@@ -1,0 +1,27 @@
+/* Enforce font-display: swap for all Font Awesome fonts */
+@font-face {
+  font-family: "Font Awesome 6 Free";
+  src: url("/assets/fa-solid-900.woff2") format("woff2"),
+       url("/assets/fa-solid-900.woff") format("woff");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Font Awesome 6 Free";
+  src: url("/assets/fa-regular-400.woff2") format("woff2"),
+       url("/assets/fa-regular-400.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Font Awesome 6 Brands";
+  src: url("/assets/fa-brands-400.woff2") format("woff2"),
+       url("/assets/fa-brands-400.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}

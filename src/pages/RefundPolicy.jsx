@@ -1,4 +1,5 @@
 import React from 'react'
+import { FaArrowRightLong } from 'react-icons/fa6';
 import { Link } from "react-router-dom";
 
 
@@ -21,7 +22,7 @@ const RefundPolicy = () => {
                   </Link>
                 </li>
                 <li>
-                  <i className="fa-solid fa-arrow-right"></i>
+                  <FaArrowRightLong/>
                 </li>
                 <li>
                   Refund Policy

@@ -7,6 +7,7 @@ import { Navigation, Pagination, Autoplay } from "swiper";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
+import { MdChevronRight, MdKeyboardArrowLeft } from "react-icons/md";
 
 export default function Testimonials({ testimonialsData }) {
   return (
@@ -57,14 +58,14 @@ export default function Testimonials({ testimonialsData }) {
             <SwiperSlide key={t.id}>
               <div className="testimonial-box-items text-center shadow-sm">
                 <div className="client-image text-center mb-3">
-                    <img
-                      src={t.image}
-                      alt={t.name}
-                      loading="lazy"
-                      fetchPriority="low"
-                      className="img-fluid rounded-3"
-                    />
-                  </div>
+                  <img
+                    src={t.image}
+                    alt={t.name}
+                    loading="lazy"
+                    fetchPriority="low"
+                    className="img-fluid rounded-3"
+                  />
+                </div>
                 <p
                   dangerouslySetInnerHTML={{
                     __html: DOMPurify.sanitize(t.message),
@@ -91,10 +92,10 @@ export default function Testimonials({ testimonialsData }) {
           {/* Navigation buttons */}
           <div className="array-button justify-content-center pt-5">
             <button className="array-prev" aria-label="Testimonial Preview">
-              <i className="fa-solid fa-chevron-left"></i>
+              <MdKeyboardArrowLeft />
             </button>
             <button className="array-next" aria-label="Testimonial Next">
-              <i className="fa-solid fa-chevron-right"></i>
+              <MdChevronRight />{" "}
             </button>
           </div>
         </Swiper>

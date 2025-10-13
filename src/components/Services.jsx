@@ -71,9 +71,7 @@ export default function Services({services}) {
                     </div>
                     <h2 className="title-anim">Exploring Essential Services </h2>
                     <p className="mt-3 wow fadeInUp" data-wow-delay=".3s">
-                        CRM management is comprehensive contact management, allowing
-                        businesses to centralize <br /> and organize customer information
-                        for easy access.
+                        AMS management is a comprehensive student and admission management system, allowing institutions to <br /> centralize and organize student and applicant information for easy access.
                     </p>
                 </div>
 

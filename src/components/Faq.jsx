@@ -49,8 +49,7 @@ export default function Faq({faqs}) {
                     </div>
                     <h2 className="title-anim">Get Your Have a Questions?</h2>
                     <p className="mt-3 wow fadeInUp" data-wow-delay=".3s">
-                        Welcome to our FAQS section, where we address common queries and provide helpful <br /> solutions to
-                        ensure you get the most out of our CRM software.
+                       Welcome to our FAQs section, where we answer common questions and provide helpful solutions to help you make the most of our Admission Management System.
                     </p>
                 </div>
 

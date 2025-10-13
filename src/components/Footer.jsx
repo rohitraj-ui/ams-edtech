@@ -1,12 +1,12 @@
 import { Link } from "react-router-dom";
-import StartTrial from './StartTrial';
+import StartTrial from "./StartTrial";
+import { FaFacebookF, FaInstagram, FaLinkedin,FaYoutube } from "react-icons/fa6";
 
 // src/components/Footer.jsx
 export default function Footer() {
   return (
     <>
       <footer className="footer-section bg-cover section-padding pb-0 custom-footer-bg">
-
         {/* <div className="container">
           <div className="footer-cta-content pb-80">
             <h2 className="title-anim">Try It Free Explore for 7 Days</h2>
@@ -40,20 +40,41 @@ export default function Footer() {
                   <div className="footer-content">
                     <p className="text-white">
                       {" "}
-                      We are a dedicated team of Innovators at Edtech Innovate Pvt. Ltd. We listen to needs and demands of the Educational Institutes and the students in particular. We are focused on imparting smart education to the students and offer state of the art management tools to the institutes all over India and abroad.{" "}
+                      We are a dedicated team of Innovators at Edtech Innovate
+                      Pvt. Ltd. We listen to needs and demands of the
+                      Educational Institutes and the students in particular. We
+                      are focused on imparting smart education to the students
+                      and offer state of the art management tools to the
+                      institutes all over India and abroad.{" "}
                     </p>
                     <div className="social-icon d-flex align-items-center">
-                      <Link to="https://www.facebook.com/EdTechInnovatePvtLtd" aria-label="facebook social media icon" target="_blank">
-                        <i className="fab fa-facebook-f"></i>
+                      <Link
+                        to="https://www.facebook.com/EdTechInnovatePvtLtd"
+                        aria-label="facebook social media icon"
+                        target="_blank"
+                      >
+                        <FaFacebookF />
                       </Link>
-                      <Link to="https://www.instagram.com/edtech_innovate/" aria-label="instagram social media icon" target="_blank">
-                        <i className="fab fa-instagram"></i>
+                      <Link
+                        to="https://www.instagram.com/edtech_innovate/"
+                        aria-label="instagram social media icon"
+                        target="_blank"
+                      >
+                        <FaInstagram />
                       </Link>
-                      <Link to="https://www.linkedin.com/company/edtechinnovate" aria-label="linkedin social media icon" target="_blank">
-                        <i className="fa-brands fa-linkedin-in"></i>
+                      <Link
+                        to="https://www.linkedin.com/company/edtechinnovate"
+                        aria-label="linkedin social media icon"
+                        target="_blank"
+                      >
+                        <FaLinkedin />
                       </Link>
-                      <Link to="https://www.youtube.com/@EdTechInnovate" aria-label="youtube social media icon" target="_blank">
-                        <i className="fa-brands fa-youtube"></i>
+                      <Link
+                        to="https://www.youtube.com/@EdTechInnovate"
+                        aria-label="youtube social media icon"
+                        target="_blank"
+                      >
+                        <FaYoutube />
                       </Link>
                     </div>
                   </div>
@@ -72,16 +93,27 @@ export default function Footer() {
                       </Link>
                     </li> */}
                     <li>
-                      <Link to="https://www.edtechinnovate.com/learning-management-system" target="_blank">
+                      <Link
+                        to="https://www.edtechinnovate.com/learning-management-system"
+                        target="_blank"
+                      >
                         Learning Management System{" "}
                         <span className="text-primary fw-bold">(LMS)</span>
                       </Link>
                     </li>
                     <li>
-                      <Link to="https://www.edtechinnovate.com/online-exam-portal" target="_blank">Online Examination Portal</Link>
+                      <Link
+                        to="https://www.edtechinnovate.com/online-exam-portal"
+                        target="_blank"
+                      >
+                        Online Examination Portal
+                      </Link>
                     </li>
                     <li>
-                      <Link to="https://leads.edtechinnovate.com/" target="_blank">
+                      <Link
+                        to="https://leads.edtechinnovate.com/"
+                        target="_blank"
+                      >
                         Customer Relationship Management{" "}
                         <span className="text-primary fw-bold">(CRM)</span>
                       </Link>
@@ -99,9 +131,7 @@ export default function Footer() {
                       <Link to="/blogs"> Blogs </Link>
                     </li>
                     <li>
-                      <Link to="/terms-conditions">
-                        Terms & Conditions
-                      </Link>
+                      <Link to="/terms-conditions">Terms & Conditions</Link>
                     </li>
                     <li>
                       <Link to="/privacy-policy">Privacy Policy</Link>
@@ -123,7 +153,9 @@ export default function Footer() {
                     <li>
                       <p className="h6 mb-0 text-white">
                         <i className="fa-sharp fa-solid fa-phone-volume me-2"></i>
-                        <Link to="tel:+91 8851920153" className="text-white">+91 8851920153 </Link>
+                        <Link to="tel:+91 8851920153" className="text-white">
+                          +91 8851920153{" "}
+                        </Link>
                       </p>
                     </li>
                     <li>
@@ -142,16 +174,17 @@ export default function Footer() {
                     <li>
                       <p className="h6 mb-0 text-white">
                         <i className="fa-sharp fa-solid fa-location-dot me-2"></i>
-                        <Link to="#" className="text-white" > A-18, S1, Second Floor, Sector 59, Noida UP 201301 </Link>
+                        <Link to="#" className="text-white">
+                          {" "}
+                          A-18, S1, Second Floor, Sector 59, Noida UP 201301{" "}
+                        </Link>
                       </p>
                     </li>
-
                   </ul>
                 </div>
               </div>
             </div>
           </div>
-
 
           {/* <div className="footer-contact-info">
             <div className="icon-items">
@@ -190,11 +223,11 @@ export default function Footer() {
             </div>
           </div> */}
 
-
           <div className="footer-bottom">
             <div className="footer-bottom-wrapper">
               <p className="text-center text-white">
-                Copyright 2025 All rights are reserved By <span className="fw-bold"> Edtech Innovate Pvt Ltd </span>
+                Copyright 2025 All rights are reserved By{" "}
+                <span className="fw-bold"> Edtech Innovate Pvt Ltd </span>
               </p>
             </div>
           </div>

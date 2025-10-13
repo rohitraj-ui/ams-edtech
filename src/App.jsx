@@ -20,7 +20,7 @@ const Pricing = React.lazy(() => import("./components/Pricing"));
 export default function App() {
   return (
     <>
-      <Suspense fallback={<div>Loading...</div>}>
+     
         <Routes>
           <Route path="/" element={<RootLayout />}>
             {/* child routes */}
@@ -42,7 +42,7 @@ export default function App() {
             <Route path="*" element={<NotFound />} />
           </Route>
         </Routes>
-      </Suspense>
+      
       <ToastContainer position="top-right" autoClose={3000} />
     </>
   );

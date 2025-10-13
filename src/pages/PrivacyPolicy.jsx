@@ -1,3 +1,4 @@
+import { FaArrowRightLong } from "react-icons/fa6";
 import { Link } from "react-router-dom";
 
 export default function PrivacyPolicy() {
@@ -19,7 +20,7 @@ export default function PrivacyPolicy() {
                                     </Link>
                                 </li>
                                 <li>
-                                    <i className="fa-solid fa-arrow-right"></i>
+                                   <FaArrowRightLong/>
                                 </li>
                                 <li>
                                     Privacy Policy

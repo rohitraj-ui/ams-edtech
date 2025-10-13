@@ -82,10 +82,10 @@ export default function Brands({ clients }) {
     //   </div>
     // </div>
 
-    <div class="brand-section section-padding section-padding2">
-      <div class="container">
-        <div class="brand-wrapper style4">
-          <div class="brand-title-2">
+    <div className="brand-section section-padding section-padding2">
+      <div className="container">
+        <div className="brand-wrapper style4">
+          <div className="brand-title-2">
             <h6>
               <img src="assets/img/star-5.png" alt="img" className="me-2" loading="lazy" fetchPriority="low" />
               Trusted By businesses worldwide with{" "}
