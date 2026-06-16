@@ -16,9 +16,12 @@ export const DataProvider = ({ children }) => {
 
   const fetchData = async () => {
     try {
-      const res = await axios.get("https://www.edtechinnovate.com/admin/app/service/api/lmsApi", {
-        headers: { "X-Pid": "3" },
-      });
+      const res = await axios.get(
+        "https://www.edtechinnovate.com/admin/app/service/api/lmsApi",
+        {
+          headers: { "X-Pid": "7" },
+        },
+      );
 
       if (res.data.status === 200) {
         const data = res.data.data;
@@ -42,11 +45,33 @@ export const DataProvider = ({ children }) => {
   }, []);
 
   const contextValue = useMemo(
-    () => ({ clients, banner, testimonials, plains, faqs, blogs, services, keyFeatures, about }),
-    [clients, banner, testimonials, plains, faqs, blogs, services, keyFeatures, about]
+    () => ({
+      clients,
+      banner,
+      testimonials,
+      plains,
+      faqs,
+      blogs,
+      services,
+      keyFeatures,
+      about,
+    }),
+    [
+      clients,
+      banner,
+      testimonials,
+      plains,
+      faqs,
+      blogs,
+      services,
+      keyFeatures,
+      about,
+    ],
   );
 
-  return <DataContext.Provider value={contextValue}>{children}</DataContext.Provider>;
+  return (
+    <DataContext.Provider value={contextValue}>{children}</DataContext.Provider>
+  );
 };
 
 export const useData = () => useContext(DataContext);

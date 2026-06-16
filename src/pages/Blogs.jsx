@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { useData } from "../context/DataContext";
+import { Helmet } from "react-helmet-async";
 export default function Blogs() {
   //  const blogData = [
   //     {
@@ -48,6 +49,13 @@ export default function Blogs() {
   const { blogs } = useData();
   return (
     <>
+    <Helmet>
+  <title>Best AMS - Edtech Innovate</title>
+  <meta
+    name="description"
+    content="Best AMS Service - Edtech Innovate Pvt Ltd"
+  />
+</Helmet>
       <section className="news-section section-padding fix">
         <div className="container">
           <div className="section-title text-center mb-40">

@@ -1,10 +1,17 @@
+import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
 
 export default function Success() {
   return (
 
     <>
-
+<Helmet>
+  <title>Best AMS - Edtech Innovate</title>
+  <meta
+    name="description"
+    content="Best AMS Service - Edtech Innovate Pvt Ltd"
+  />
+</Helmet>
       <section>
         <div className="container mb-5">
           <div className="row align-items-center justify-content-center">

@@ -1,8 +1,16 @@
+import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
 
 export default function PrivacyPolicy() {
     return (
         <>
+        <Helmet>
+  <title>Best AMS - Edtech Innovate</title>
+  <meta
+    name="description"
+    content="Best AMS Service - Edtech Innovate Pvt Ltd"
+  />
+</Helmet>
             {/* Breadcrumb Section starts */}
             <div className="breadcrumb-wrapper bg-cover" style={{ backgroundImage: "url('assets/img/breadcrumb.jpg')" }} >
                 <div className="container">

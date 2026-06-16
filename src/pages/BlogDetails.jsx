@@ -1,6 +1,6 @@
 import { Link, useParams } from "react-router-dom";
 import { useData } from "../context/DataContext";
-
+import { Helmet } from "react-helmet-async";
 export default function BlogDetails() {
   const { slug } = useParams(); // slug from URL
   const { blogs } = useData(); // global blogs from context
@@ -9,9 +9,35 @@ export default function BlogDetails() {
   const blog = blogs.find((b) => b.Slug === slug);
 
   if (!blog) return <p>Blog not found</p>;
-
+  console.log("Blog Details:", blog.Meta_Description); // Debug log to check blog data
   return (
     <>
+      <Helmet>
+        <title>{blog.Meta_Title || blog.Name}</title>
+
+        <meta name="description" content={blog.Meta_Description || ""} />
+
+        <meta name="keywords" content={blog.Meta_Key || ""} />
+
+        <link
+          rel="canonical"
+          href={`https://ams.edtechinnovate.com/blog/${blog.Slug}`}
+        />
+
+        <meta property="og:title" content={blog.Meta_Title || blog.Name} />
+
+        <meta property="og:description" content={blog.Meta_Description || ""} />
+
+        <meta property="og:image" content={blog.Photo} />
+
+        <meta
+          property="og:url"
+          content={`https://ams.edtechinnovate.com/blog/${blog.Slug}`}
+        />
+
+        <meta property="og:type" content="article" />
+      </Helmet>
+
       {/* Breadcrumb */}
       <div
         className="breadcrumb-wrapper bg-cover"
@@ -115,11 +141,16 @@ export default function BlogDetails() {
                                 </li>
                               </ul>
                               <h3>
-                                <Link to={`/blog/${b.Slug}`} className="text-black">{b.Name}</Link>
+                                <Link
+                                  to={`/blog/${b.Slug}`}
+                                  className="text-black"
+                                >
+                                  {b.Name}
+                                </Link>
                               </h3>
                               <Link to={`/blog/${b.Slug}`} className="link-btn">
                                 Continue Reading{" "}
-                                 <i className="fa-solid fa-arrow-right"></i>
+                                <i className="fa-solid fa-arrow-right"></i>
                               </Link>
                             </div>
                           </div>

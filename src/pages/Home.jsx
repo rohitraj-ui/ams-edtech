@@ -6,6 +6,7 @@
   import AboutUsSection from "../components/AboutUsSection";
   import Brands from "../components/Brands";
   import Services from "../components/Services";
+import { Helmet } from "react-helmet-async";
 
   // Lazy-loaded below-the-fold sections
   const Features = React.lazy(() => import("../components/Features"));
@@ -31,6 +32,13 @@
 
     return (
       <>
+      <Helmet>
+  <title>Best AMS - Edtech Innovate</title>
+  <meta
+    name="description"
+    content="Best AMS Service - Edtech Innovate Pvt Ltd"
+  />
+</Helmet>
         {/* Above-the-fold */}
         <Hero banner={banner} />
         <AboutUsSection about={about} />
